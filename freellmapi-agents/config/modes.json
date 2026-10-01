@@ -1,0 +1,21 @@
+{
+  "active_mode": "normal",
+  "modes": {
+    "fast": {
+      "name": "FAST",
+      "description": "Prioritizes ultra-low latency (<0.5s TTFT) and high throughput over deep reasoning",
+      "default_claude_model": "auto",
+      "default_codex_model": "qwen/qwen3.8-27b",
+      "default_general_model": "qwen/qwen3.8-27b",
+      "max_latency_threshold_ms": 3000
+    },
+    "normal": {
+      "name": "NORMAL",
+      "description": "Balanced latency, coding excellence, 1M context window, robust tool calling, and fallback safety",
+      "default_claude_model": "auto",
+      "default_codex_model": "auto",
+      "default_general_model": "auto",
+      "max_latency_threshold_ms": 15000
+    }
+  }
+}

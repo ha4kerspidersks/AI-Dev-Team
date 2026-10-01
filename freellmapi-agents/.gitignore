@@ -1,0 +1,25 @@
+# Environments & secrets
+.env
+.env.*
+*.key
+*.token
+credentials*
+secrets*
+tokens*
+private config
+secret logs
+
+# Local runtime data & caches
+logs/*.log
+logs/*.jsonl
+data/cache/
+data/*.sqlite*
+backups/
+node_modules/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local override configs that contain runtime keys
+config/local.*
+config/*.secret.*

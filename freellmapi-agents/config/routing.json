@@ -1,0 +1,210 @@
+{
+  "task_profiles": {
+    "FAST": {
+      "description": "Lowest latency (<1.5s TTFT), high-throughput responses for quick edits and queries",
+      "primary": "qwen/qwen3.8-27b",
+      "secondary": "gemini-3.5-flash-lite",
+      "tertiary": "gemini-3.1-flash-lite",
+      "fallbacks": [
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "codestral-2508",
+        "auto"
+      ],
+      "preferred_providers": ["groq", "google", "openrouter"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 15,
+      "retry": 2,
+      "fallback_behavior": "Immediate failover to secondary model on 5xx, timeout, or rate-limit"
+    },
+    "CODING": {
+      "description": "High intelligence, robust tool/function calling, large context, reliable syntax generation",
+      "primary": "qwen/qwen3.8-27b",
+      "secondary": "auto",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "auto",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "codestral-2508"
+      ],
+      "preferred_providers": ["groq", "openrouter", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 45,
+      "retry": 2,
+      "fallback_behavior": "Failover to Auto or Flash-Lite with exponential backoff"
+    },
+    "REASONING": {
+      "description": "Complex logic, deep architectural synthesis, bug root cause analysis",
+      "primary": "auto",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite"
+      ],
+      "preferred_providers": ["openrouter", "groq", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 60,
+      "retry": 2,
+      "fallback_behavior": "Preserve context tokens and retry on alternative high-capacity reasoning model"
+    },
+    "DEEP_REASONING": {
+      "description": "Complex logic, deep architectural synthesis, bug root cause analysis (alias for REASONING)",
+      "primary": "auto",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite"
+      ],
+      "preferred_providers": ["openrouter", "groq", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 60,
+      "retry": 2,
+      "fallback_behavior": "Preserve context tokens and retry on alternative high-capacity reasoning model"
+    },
+    "LONG_CONTEXT": {
+      "description": "Repository-scale analysis requiring 256k to 1M token context windows",
+      "primary": "auto",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite"
+      ],
+      "min_context_window": 131072,
+      "preferred_providers": ["groq", "google", "openrouter"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 90,
+      "retry": 2,
+      "fallback_behavior": "Failover strictly to models supporting high context capacity"
+    },
+    "GENERAL": {
+      "description": "Default balanced daily driver for interactive agent sessions",
+      "primary": "auto",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "gemini-3.5-flash-lite",
+        "codestral-2508"
+      ],
+      "preferred_providers": ["groq", "openrouter", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 30,
+      "retry": 2,
+      "fallback_behavior": "Auto-selection with cascading fallbacks across available quota pools"
+    },
+    "FALLBACK": {
+      "description": "Universal emergency fallback route when primary models hit rate limits or downtime",
+      "primary": "qwen/qwen3.8-27b",
+      "secondary": "auto",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "auto",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite"
+      ],
+      "preferred_providers": ["groq", "openrouter", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 20,
+      "retry": 3,
+      "fallback_behavior": "Sequential progression through high-availability free tier endpoints"
+    },
+    "TOOL_USE": {
+      "description": "Strict function calling and structured tool execution for autonomous loops",
+      "primary": "auto",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "gemini-3.5-flash-lite",
+        "codestral-2508"
+      ],
+      "requires_tools": true,
+      "preferred_providers": ["groq", "openrouter", "google"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 45,
+      "retry": 2,
+      "fallback_behavior": "Filter only to models with validated JSON schema function calling support"
+    },
+    "RESEARCH": {
+      "description": "Broad information gathering, synthesis, and documentation formatting",
+      "primary": "qwen/qwen3.8-27b",
+      "secondary": "auto",
+      "tertiary": "gemini-3.5-flash-lite",
+      "fallbacks": [
+        "auto",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite"
+      ],
+      "preferred_providers": ["groq", "google", "openrouter"],
+      "endpoint": "http://127.0.0.1:31415/v1",
+      "timeout": 30,
+      "retry": 2,
+      "fallback_behavior": "Cascade through high-throughput fast completion models"
+    },
+    "LOCAL": {
+      "description": "Local offline execution via local Qwen bridge or local inference",
+      "primary": "local-qwen-bridge",
+      "secondary": "qwen/qwen3.8-27b",
+      "tertiary": "auto",
+      "endpoint": "http://127.0.0.1:8787",
+      "model": "Qwen/Qwen3.8-27B",
+      "fallbacks": [
+        "qwen/qwen3.8-27b",
+        "auto"
+      ],
+      "preferred_providers": ["local", "groq", "openrouter"],
+      "timeout": 60,
+      "retry": 1,
+      "fallback_behavior": "If local bridge process is offline, gracefully fall back to FreeLLMAPI Qwen/Auto"
+    }
+  },
+  "blocked_or_quarantined_models": [
+    {
+      "model_id": "gemini-2.5-flash",
+      "platform": "google",
+      "reason": "Officially deprecated by Google upstream (Google API error 404: This model models/gemini-2.5-flash is no longer available to new users)."
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "platform": "all (groq, cloudflare, ollama, sail, electronhub)",
+      "reason": "Exhausted upstream providers (429 quota limit on ElectronHub, empty completions on Groq & Cloudflare, rate limits on Ollama, bad request on Sail). Produces HTTP 502 Bad Gateway."
+    },
+    {
+      "model_id": "gpt-oss:120b",
+      "platform": "all",
+      "reason": "Alias to gpt-oss-120b. Upstream empty completion / exhausted quotas causing HTTP 502."
+    },
+    {
+      "model_id": "gemini-3-flash-preview",
+      "platform": "google",
+      "reason": "Upstream Google provider returned empty_completion (HTTP 502)."
+    },
+    {
+      "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "platform": "openrouter/waterfall",
+      "reason": "Upstream empty completion during streaming requests (HTTP 502)."
+    },
+    {
+      "model_id": "dots-studio/dots-3-note-preview:free",
+      "platform": "openrouter",
+      "reason": "Upstream HTTP 502 Bad Gateway."
+    },
+    {
+      "model_id": "nvidia/nemotron-3.5-lightning:free",
+      "platform": "openrouter",
+      "reason": "Extreme upstream latency (170s-350s) and frequent stream resets."
+    },
+    {
+      "model_id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "platform": "cloudflare",
+      "reason": "Severely truncated context window (24k tokens) causing HTTP 413 context errors on coding tasks."
+    }
+  ]
+}

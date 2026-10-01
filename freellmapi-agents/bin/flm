@@ -1,0 +1,204 @@
+#!/usr/bin/env bash
+# ============================================================
+# FLM - Unified FreeLLMAPI Local Dispatcher & Agent CLI
+# ============================================================
+set -eo pipefail
+
+TARGET="${BASH_SOURCE[0]}"
+while [ -L "$TARGET" ]; do
+    TARGET_DIR="$(cd -P "$(dirname "$TARGET")" && pwd)"
+    TARGET="$(readlink "$TARGET")"
+    [[ $TARGET != /* ]] && TARGET="$TARGET_DIR/$TARGET"
+done
+SCRIPT_DIR="$(cd -P "$(dirname "$TARGET")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+SCRIPTS_DIR="${PROJECT_ROOT}/scripts"
+DATA_DIR="${PROJECT_ROOT}/data"
+LOGS_DIR="${PROJECT_ROOT}/logs"
+BACKUPS_DIR="${PROJECT_ROOT}/backups"
+
+export PYTHONPATH="${PROJECT_ROOT}:${SCRIPTS_DIR}:${PYTHONPATH:-}"
+
+PYTHON_BIN="$(which python3 || echo "python3")"
+
+print_help() {
+    cat <<EOF
+Usage: flm <command> [options] [arguments...]
+
+Diagnostic & Management Commands:
+  flm status                 Show overall gateway, agent, and mode status
+  flm doctor                 Run comprehensive environment & agent health verification
+  flm health                 Display real-time provider and model telemetry
+  flm models [q]             List available models (optional query filter, --tools)
+  flm providers              List provider platforms and API key health
+  flm quotas                 List quota pools, remaining limits, and active cooldowns
+  flm routing                Display task classification routing profiles & fallbacks
+  flm mode [mode]            Get or set operating mode (fast | normal | status)
+  flm test                   Run end-to-end performance and latency validation suite
+  flm audit                  Execute full system audit comparing before/after metrics
+  flm repair                 Safely check and repair permissions, paths, and configs
+  flm backup                 Create a timestamped snapshot of all agent configs
+  flm update                 Check for FreeLLMAPI router and agent updates
+  flm logs [-n N]            Inspect gateway logs with secrets automatically redacted
+
+Unified 18-Agent Commands:
+  flm agents                 Show status table for all 18 agents
+  flm agents status          Display status table (Installed, Version, Gateway, E2E)
+  flm agents list            Display detailed agent registry
+  flm agents test [agent]    Run E2E verification across agents or for a specific agent
+  flm agent <agent> [...]    Launch specified agent routed through FreeLLMAPI
+
+Individual Agent Shortcuts:
+  flm claude [...]           Launch Claude Code routed to FreeLLMAPI
+  flm codex [...]            Launch Codex CLI routed to FreeLLMAPI
+  flm aider [...]            Launch Aider
+  flm opencode [...]         Launch OpenCode
+  flm goose [...]            Launch Goose
+  flm qwen [...]             Launch Qwen Code
+  flm cline [...]            Launch Cline CLI
+  flm kilo [...]             Launch Kilo Code CLI
+  flm crush [...]            Launch Crush CLI
+  flm dsh [...]              Launch DeepSeek Harness (port 3080)
+  flm mimo [...]             Launch MiMo Code
+  flm atomcode [...]         Launch AtomCode
+  flm openclaw [...]         Launch OpenClaw
+  flm hermes [...]           Launch Hermes Agent
+  flm cursor [...]           Launch Cursor IDE
+  flm gemini [...]           Launch Gemini CLI (supports --freellmapi, --local-qwen)
+
+Help:
+  flm help                   Show this message
+EOF
+}
+
+cmd="${1:-status}"
+shift || true
+
+case "$cmd" in
+    status)
+        "$PYTHON_BIN" -c "
+import urllib.request, json, os, subprocess
+from scripts.common import get_gateway_config, check_gateway_reachable, get_auth_token, load_json
+from scripts.doctor import check_port
+
+gw = get_gateway_config()
+is_up = check_gateway_reachable()
+token = get_auth_token()
+modes = load_json(os.path.join('${PROJECT_ROOT}', 'config', 'modes.json'))
+active_mode = modes.get('active_mode', 'normal').upper()
+
+print('\nFLM DISPATCHER STATUS')
+print('=' * 50)
+print(f'Gateway:     {\"ONLINE (127.0.0.1:31415)\" if is_up else \"OFFLINE\"}')
+print(f'Active Mode: {active_mode}')
+print(f'Auth Token:  {\"CONFIGURED\" if token else \"MISSING\"}')
+print(f'Claude Code: {\"ROUTED\" if is_up and token else \"UNAVAILABLE\"}')
+print(f'Codex CLI:   {\"ROUTED\" if is_up and token else \"UNAVAILABLE\"}')
+print(f'DSH (3080):  {\"RUNNING\" if check_port(\"127.0.0.1\", 3080) else \"STOPPED\"}')
+print(f'Local Qwen:  {\"ONLINE (8787)\" if check_port(\"127.0.0.1\", 8787) else \"OFFLINE (READY)\"}')
+print('=' * 50 + '\n')
+"
+        ;;
+
+    agents)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/agents_manager.py" "$@"
+        ;;
+
+    agent)
+        agent_name="${1:-}"
+        if [ -z "$agent_name" ]; then
+            echo "Error: Missing agent name. Usage: flm agent <agent_name> [args...]"
+            exit 1
+        fi
+        shift || true
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/agent_launcher.py" "$agent_name" "$@"
+        ;;
+
+    doctor)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/doctor.py" "$@"
+        ;;
+
+    health)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_tracker.py"
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" quotas
+        ;;
+
+    models)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" models "$@"
+        ;;
+
+    providers)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" providers
+        ;;
+
+    quotas)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" quotas
+        ;;
+
+    routing)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" routing
+        ;;
+
+    mode)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" mode "$@"
+        ;;
+
+    test)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/tester.py" "$@"
+        ;;
+
+    audit)
+        echo -e "\nRunning Global AI Environment Audit..."
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/doctor.py"
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/model_manager.py" routing
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/tester.py"
+        ;;
+
+    repair)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/repair_engine.py" "$@"
+        ;;
+
+    backup)
+        "$PYTHON_BIN" -c "
+from scripts.repair_engine import create_backup_snapshot
+bdir, items = create_backup_snapshot()
+print(f'Snapshot successfully created in: {bdir}')
+for s, d in items:
+    print(f'  ✓ {s}')
+"
+        ;;
+
+    update)
+        echo "Checking for FreeLLMAPI updates via npm..."
+        npx -y freellmapi doctor --url http://127.0.0.1:31415 || true
+        ;;
+
+    logs)
+        lines="${1:-30}"
+        if [ "$lines" = "-n" ]; then
+            lines="${2:-30}"
+        fi
+        log_file="${HOME}/Library/Application Support/FreeLLMAPI/logs/freeapi.log"
+        if [ -f "$log_file" ]; then
+            echo -e "\n=== FreeLLMAPI Gateway Logs (Last $lines lines) ==="
+            tail -n "$lines" "$log_file" | sed -E 's/(Bearer |key=)[A-Za-z0-9_\.\-]{8,}/\1[REDACTED]/g'
+            echo "=================================================="
+        else
+            echo "No gateway log found at $log_file"
+        fi
+        ;;
+
+    claude|codex|gemini|dsh|aider|opencode|qwen|goose|cline|roo|kilo|crush|mimo|atomcode|openclaw|hermes|cursor)
+        "$PYTHON_BIN" "${SCRIPTS_DIR}/agent_launcher.py" "$cmd" "$@"
+        ;;
+
+    help|--help|-h)
+        print_help
+        ;;
+
+    *)
+        echo "Unknown command: $cmd"
+        print_help
+        exit 1
+        ;;
+esac

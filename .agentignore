@@ -1,0 +1,9 @@
+# AI-Dev-Team Agent Ignore
+# Exclude vendor clone trees, environments, and logs from project memory indexing
+repos/
+environments/
+backups/
+logs/
+_skill-validation/
+test-projects/
+workspaces/

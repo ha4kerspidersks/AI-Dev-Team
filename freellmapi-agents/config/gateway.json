@@ -1,0 +1,16 @@
+{
+  "name": "FreeLLMAPI",
+  "host": "127.0.0.1",
+  "port": 31415,
+  "base_url": "http://127.0.0.1:31415",
+  "openai_base_url": "http://127.0.0.1:31415/v1",
+  "anthropic_base_url": "http://127.0.0.1:31415",
+  "gemini_base_url": "http://127.0.0.1:31415/v1beta",
+  "auth_header": "Authorization",
+  "auth_prefix": "Bearer ",
+  "db_path": "/Users/subhajkar/Library/Application Support/FreeLLMAPI/freeapi.db",
+  "log_path": "/Users/subhajkar/Library/Application Support/FreeLLMAPI/logs/freeapi.log",
+  "app_path": "/Applications/FreeLLMAPI.app",
+  "local_qwen_port": 8787,
+  "dsh_port": 3080
+}

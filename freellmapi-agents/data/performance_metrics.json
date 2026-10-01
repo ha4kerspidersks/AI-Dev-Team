@@ -1,0 +1,51 @@
+{
+  "timestamp": 1790861966.498165,
+  "date": "2026-10-01 19:09:26",
+  "results": {
+    "Anthropic SSE (auto)": {
+      "status": "PASS",
+      "ttft_sec": 2.352,
+      "total_sec": 2.357,
+      "chunks": 6,
+      "response": "OK",
+      "error": null
+    },
+    "OpenAI SSE (qwen/qwen3.8-27b - fast)": {
+      "status": "PASS",
+      "ttft_sec": 0.219,
+      "total_sec": 0.219,
+      "chunks": 4,
+      "response": "OK",
+      "error": null
+    },
+    "OpenAI SSE (auto)": {
+      "status": "PASS",
+      "ttft_sec": 3.336,
+      "total_sec": 3.336,
+      "chunks": 5,
+      "response": "OK",
+      "error": null
+    },
+    "Claude Code CLI (e2e)": {
+      "status": "PASS",
+      "ttft_sec": 3.402,
+      "total_sec": 3.402,
+      "response": "OK",
+      "error": null
+    },
+    "Codex CLI (e2e - auto)": {
+      "status": "PASS",
+      "ttft_sec": 5.527,
+      "total_sec": 5.527,
+      "response": "OK",
+      "error": null
+    },
+    "Codex CLI (e2e - direct)": {
+      "status": "PASS",
+      "ttft_sec": 5.203,
+      "total_sec": 5.203,
+      "response": "OK",
+      "error": null
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "mcpServers": {
+    "notebooks": {
+      "command": "node",
+      "args": [
+        "/Users/subhajkar/.antigravity-ide/extensions/googlecloudtools.datacloud-0.11.0-universal/mcp_servers/cli/mcp_proxy_bundle.js",
+        "notebooks-antigravityide"
+      ]
+    },
+    "visualization": {
+      "command": "node",
+      "args": [
+        "/Users/subhajkar/.antigravity-ide/extensions/googlecloudtools.datacloud-0.11.0-universal/mcp_servers/cli/mcp_proxy_bundle.js",
+        "visualization-antigravityide"
+      ]
+    },
+    "data-agent-kit": {
+      "command": "node",
+      "args": [
+        "/Users/subhajkar/.antigravity-ide/extensions/googlecloudtools.datacloud-0.11.0-universal/mcp_servers/cli/mcp_proxy_bundle.js",
+        "dataAgentKit-antigravityide"
+      ]
+    },
+    "datacloud_bigquery_remote": {
+      "serverUrl": "https://bigquery.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/bigquery",
+          "https://www.googleapis.com/auth/cloud-platform"
+        ]
+      }
+    },
+    "datacloud_spanner_remote": {
+      "serverUrl": "https://spanner.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/spanner.admin",
+          "https://www.googleapis.com/auth/spanner.data"
+        ]
+      }
+    },
+    "datacloud_alloydb_remote": {
+      "serverUrl": "https://alloydb.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/cloud-platform"
+        ]
+      }
+    },
+    "datacloud_cloud-sql_remote": {
+      "serverUrl": "https://sqladmin.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/cloud-platform"
+        ]
+      }
+    },
+    "datacloud_knowledge_catalog_remote": {
+      "serverUrl": "https://dataplex.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/cloud-platform"
+        ]
+      }
+    },
+    "datacloud_dataproc_remote": {
+      "serverUrl": "https://dataproc-${REGION}.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "headers": {
+        "User-Agent": "datacloud.antigravity"
+      },
+      "oauth": {
+        "scopes": [
+          "https://www.googleapis.com/auth/dataproc"
+        ]
+      }
+    },
+    "agent-team": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/node22/bin/node",
+      "args": [
+        "/Users/subhajkar/Developer/AI-Dev-Team/repos/AgentTeam/mcp-server/dist/index.js"
+      ]
+    },
+    "github": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/node22/bin/node",
+      "args": [
+        "/Users/subhajkar/Developer/AI-Dev-Team/mcp/node_modules/@modelcontextprotocol/server-github/dist/index.js"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "git": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/mcp-env/bin/mcp-server-git",
+      "args": []
+    },
+    "filesystem": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/node22/bin/node",
+      "args": [
+        "/Users/subhajkar/Developer/AI-Dev-Team/mcp/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+        "/Users/subhajkar/Developer"
+      ]
+    },
+    "browser": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/node22/bin/node",
+      "args": [
+        "/Users/subhajkar/Developer/AI-Dev-Team/mcp/node_modules/@modelcontextprotocol/server-puppeteer/dist/index.js"
+      ]
+    },
+    "web": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/mcp-env/bin/mcp-server-fetch",
+      "args": []
+    },
+    "context7": {
+      "command": "/Users/subhajkar/Developer/AI-Dev-Team/environments/node22/bin/node",
+      "args": [
+        "/Users/subhajkar/Developer/AI-Dev-Team/mcp/node_modules/@upstash/context7-mcp/dist/index.js"
+      ]
+    }
+  }
+}

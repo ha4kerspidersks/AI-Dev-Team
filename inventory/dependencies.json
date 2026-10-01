@@ -1,0 +1,1137 @@
+[
+  {
+    "id": "AGT-001",
+    "name": "Master Orchestrator",
+    "runtime": "Host Antigravity IDE",
+    "model": "Dynamic (Gemini 3.1 Pro / Claude Sonnet / Copilot Auto)",
+    "mcp_dependencies": [
+      "filesystem",
+      "git",
+      "github",
+      "agent-team",
+      "web"
+    ],
+    "skill_dependencies": [
+      "orchestration",
+      "using-superpowers"
+    ],
+    "project_dependencies": "Global (Host IDE)"
+  },
+  {
+    "id": "AGT-002",
+    "name": "Architect Specialist",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.1 Pro / Claude Sonnet 4.6 Thinking",
+    "mcp_dependencies": [
+      "filesystem",
+      "web"
+    ],
+    "skill_dependencies": [
+      "c4-architecture-c4-architecture",
+      "api-designer",
+      "orchestration"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-003",
+    "name": "Developer Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash / Gemini 3.1 Pro",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "tdd-workflow",
+      "modern-web-guidance",
+      "fp-pragmatic"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-004",
+    "name": "Fast Developer",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash (Low Latency)",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "fast-developer"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-005",
+    "name": "Tester Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "browser"
+    ],
+    "skill_dependencies": [
+      "tdd-workflows-tdd-cycle",
+      "jest-skill",
+      "cypress-skill"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-006",
+    "name": "Security Reviewer",
+    "runtime": "Host Antigravity IDE",
+    "model": "Claude Sonnet / Opus 4.6 Thinking",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "007",
+      "vulnerability-scanner",
+      "security-scanning-security-sast"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-007",
+    "name": "Deep Reviewer",
+    "runtime": "Host Antigravity IDE",
+    "model": "Claude Sonnet 4.6 Thinking",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "systematic-debugging",
+      "differential-review",
+      "code-reviewer"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-008",
+    "name": "Second Opinion",
+    "runtime": "Host Antigravity IDE",
+    "model": "Claude Opus 4.6 Thinking",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "code-reviewer",
+      "grilling",
+      "receiving-code-review"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-009",
+    "name": "Researcher Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.1 Pro",
+    "mcp_dependencies": [
+      "web",
+      "gemini-api-docs"
+    ],
+    "skill_dependencies": [
+      "deep-research",
+      "search-first",
+      "go-in-depth"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-010",
+    "name": "Documentation Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "api-documenter",
+      "living-docs-governance",
+      "documentation-and-adrs"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-011",
+    "name": "Git Release Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash",
+    "mcp_dependencies": [
+      "git",
+      "github"
+    ],
+    "skill_dependencies": [
+      "git-workflow",
+      "pr-writer",
+      "changelog-automation"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-012",
+    "name": "GitHub Copilot Bridge",
+    "runtime": "Node.js (System)",
+    "model": "Copilot Auto / GPT-5.3 / Sonnet 5",
+    "mcp_dependencies": [
+      "github"
+    ],
+    "skill_dependencies": [
+      "copilot"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-013",
+    "name": "Firestore Rules Author",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "firestore-rules-creation",
+      "firebase-security-rules-auditor"
+    ],
+    "project_dependencies": "Firebase projects"
+  },
+  {
+    "id": "AGT-014",
+    "name": "Flutter A11y Agent",
+    "runtime": "Host Antigravity IDE",
+    "model": "Gemini 3.8 Flash",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "flutter-apply-architecture-best-practices",
+      "screen-reader-testing"
+    ],
+    "project_dependencies": "Flutter projects"
+  },
+  {
+    "id": "AGT-015",
+    "name": "Product Manager Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "spec-kit",
+      "product-lens"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-016",
+    "name": "Project Manager Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "track-management"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-017",
+    "name": "Specification Engineer Role",
+    "runtime": "Python 3.14 (speckit-env)",
+    "model": "Dynamic",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "spec-driven-development"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-018",
+    "name": "Software Architect Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team",
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "c4-architecture-c4-architecture"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-019",
+    "name": "Frontend Developer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team",
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "modern-web-guidance",
+      "tailwind-patterns"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-020",
+    "name": "Backend Developer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team",
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "api-patterns",
+      "fastapi-patterns"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-021",
+    "name": "AI/ML Developer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "gemini-api-dev",
+      "rag-implementation"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-022",
+    "name": "DevOps Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "github-actions-templates",
+      "docker-patterns"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-023",
+    "name": "QA Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team",
+      "browser"
+    ],
+    "skill_dependencies": [
+      "tdd-workflow",
+      "jest-skill"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-024",
+    "name": "Security Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "security-scanning-security-sast",
+      "vulnerability-scanner"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-025",
+    "name": "Code Reviewer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "code-reviewer",
+      "differential-review"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-026",
+    "name": "Documentation Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "documentation",
+      "living-docs-governance"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-027",
+    "name": "Research Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "web"
+    ],
+    "skill_dependencies": [
+      "deep-research",
+      "literature-search-arxiv"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-028",
+    "name": "Git/GitHub Engineer Role",
+    "runtime": "Agnostic",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "git",
+      "github"
+    ],
+    "skill_dependencies": [
+      "git-workflow",
+      "create-pr"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-029",
+    "name": "AgentTeam Full-Stack Developer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-030",
+    "name": "AgentTeam Backend Developer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-031",
+    "name": "AgentTeam Frontend Developer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-032",
+    "name": "AgentTeam Mobile Developer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-033",
+    "name": "AgentTeam DevOps Engineer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-034",
+    "name": "AgentTeam QA Engineer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-035",
+    "name": "AgentTeam Security Engineer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-036",
+    "name": "AgentTeam Product Manager",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-037",
+    "name": "AgentTeam Project Manager",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-038",
+    "name": "AgentTeam Data Engineer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-039",
+    "name": "AgentTeam Data Scientist",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-040",
+    "name": "AgentTeam UX Researcher",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-041",
+    "name": "AgentTeam UX/UI Designer",
+    "runtime": "Node 22 LTS (node22)",
+    "model": "Dynamic",
+    "mcp_dependencies": [
+      "agent-team"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "AgentTeam"
+  },
+  {
+    "id": "AGT-042",
+    "name": "OpenSepia Product Owner (PO)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-043",
+    "name": "OpenSepia Project Manager (PM)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-044",
+    "name": "OpenSepia Developer 1 (dev1)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-045",
+    "name": "OpenSepia Developer 2 (dev2)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-046",
+    "name": "OpenSepia QA Tester (tester)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-047",
+    "name": "OpenSepia DevOps (devops)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-048",
+    "name": "OpenSepia Security Analyst (sec_analyst)",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-049",
+    "name": "OpenSepia Architecture Reviewer",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-050",
+    "name": "OpenSepia Scrum Master",
+    "runtime": "Python 3.14 (opensepia-env)",
+    "model": "Claude Code CLI",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenSepia"
+  },
+  {
+    "id": "AGT-051",
+    "name": "Autonomous Dispatcher",
+    "runtime": "Zsh / Bash",
+    "model": "Agnostic",
+    "mcp_dependencies": [
+      "git",
+      "github"
+    ],
+    "skill_dependencies": [
+      "autonomous-dispatcher"
+    ],
+    "project_dependencies": "autonomous-dev-team"
+  },
+  {
+    "id": "AGT-052",
+    "name": "Autonomous Dev Agent",
+    "runtime": "Antigravity CLI (agy) / Claude",
+    "model": "Gemini 3.8 Flash / Claude Sonnet",
+    "mcp_dependencies": [
+      "git",
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "autonomous-dev",
+      "tdd-workflow"
+    ],
+    "project_dependencies": "autonomous-dev-team"
+  },
+  {
+    "id": "AGT-053",
+    "name": "Autonomous Review Agent",
+    "runtime": "Antigravity CLI (agy) / Claude",
+    "model": "Gemini 3.8 Flash / Claude Sonnet",
+    "mcp_dependencies": [
+      "git",
+      "github"
+    ],
+    "skill_dependencies": [
+      "autonomous-review"
+    ],
+    "project_dependencies": "autonomous-dev-team"
+  },
+  {
+    "id": "AGT-054",
+    "name": "OpenHands Agent Canvas",
+    "runtime": "Node 24+ / Python 3.14 (openhands-env)",
+    "model": "Dynamic (Claude / GPT / Gemini)",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [],
+    "project_dependencies": "OpenHands"
+  },
+  {
+    "id": "AGT-055",
+    "name": "Strix Pentesting Agent",
+    "runtime": "Python 3.14",
+    "model": "Dynamic LLM",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "web-app-penetration-testing"
+    ],
+    "project_dependencies": "strix"
+  },
+  {
+    "id": "AGT-056",
+    "name": "Understand-Anything AST Engine",
+    "runtime": "Node.js (node22)",
+    "model": "Gemini / Claude",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "understand-chat",
+      "understand-dashboard",
+      "understand-explain",
+      "understand-onboard"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-057",
+    "name": "GitHub Spec Kit CLI",
+    "runtime": "Python 3.14 (speckit-env)",
+    "model": "Agnostic",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "spec-driven-development"
+    ],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-058",
+    "name": "AI Fraud Investigation Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-059",
+    "name": "Insurance Claim Live Agent Team",
+    "runtime": "Python 3.14",
+    "model": "OpenAI Realtime / Gemini Live",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "voice-agents"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-060",
+    "name": "AI Dashboard Canvas Agent",
+    "runtime": "Python 3.14 / Node",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "magic-ui-generator"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-061",
+    "name": "AI Deep Research Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "deep-research"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-062",
+    "name": "AI Financial Coach Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-063",
+    "name": "AI Shadcn Component Generator",
+    "runtime": "Python 3.14 / Node",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "ui-component",
+      "tailwind-patterns"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-064",
+    "name": "AI MCP App Builder",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [
+      "filesystem"
+    ],
+    "skill_dependencies": [
+      "mcp-server-patterns"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-065",
+    "name": "AI Knowledge Explorer",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-066",
+    "name": "Mixture of Agents (MoA)",
+    "runtime": "Python 3.14",
+    "model": "Multi-Model Ensemble",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-067",
+    "name": "AI Data Analysis Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "data-engineer"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-068",
+    "name": "Web Scraping AI Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "apify-lead-generation"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-069",
+    "name": "AI Reasoning Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "thinking-out-loud"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-070",
+    "name": "Startup Trend Analysis Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "market-research"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-071",
+    "name": "Customer Support Voice Agent",
+    "runtime": "Python 3.14",
+    "model": "Gemini Live / OpenAI Realtime",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "voice-agents"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-072",
+    "name": "DeepSeek Local RAG Agent",
+    "runtime": "Python 3.14",
+    "model": "DeepSeek R1 / V3",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "rag-implementation"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-073",
+    "name": "Project Graveyard Agent",
+    "runtime": "Python 3.14",
+    "model": "OpenAI / Gemini",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "project-graveyard"
+    ],
+    "project_dependencies": "awesome-llm-apps"
+  },
+  {
+    "id": "AGT-074",
+    "name": "Qwen Antigravity Bridge",
+    "runtime": "Python 3.14 (.venv)",
+    "model": "Qwen/Qwen3.8-27B",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "qwen-antigravity"
+  },
+  {
+    "id": "AGT-075",
+    "name": "OmniRoute Gateway",
+    "runtime": "Node 22 LTS",
+    "model": "Multi-Provider Dynamic",
+    "mcp_dependencies": [],
+    "skill_dependencies": [],
+    "project_dependencies": "None"
+  },
+  {
+    "id": "AGT-076",
+    "name": "LinkedIn Profile Reader",
+    "runtime": "Python 3.14 (macOS osascript)",
+    "model": "None (Deterministic)",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "li-profile",
+      "li-human"
+    ],
+    "project_dependencies": "LinkedIn-Audit"
+  },
+  {
+    "id": "AGT-077",
+    "name": "Portfolio QA & Security Suite",
+    "runtime": "Node.js (Playwright)",
+    "model": "Dynamic",
+    "mcp_dependencies": [],
+    "skill_dependencies": [
+      "playwright-skill",
+      "vulnerability-scanner"
+    ],
+    "project_dependencies": "subhajitportfolio-2.0"
+  },
+  {
+    "id": "AGT-099",
+    "name": "Pre-Live Full Audit Orchestrator",
+    "runtime": "Python 3 / Node / Shell",
+    "model": "Dynamic (Gemini Pro / Claude Sonnet / Copilot Auto)",
+    "mcp_dependencies": [
+      "filesystem",
+      "git",
+      "github",
+      "agent-team"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit",
+      "security-audit-recon",
+      "finding-verification",
+      "release-gating"
+    ],
+    "project_dependencies": "Global (~/Developer)"
+  },
+  {
+    "id": "AGT-100",
+    "name": "Code Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini 3.1 Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-101",
+    "name": "Security Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Claude Sonnet / Gemini Pro",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "security-audit-recon"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-102",
+    "name": "Bug & Logic Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini 3.1 Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-103",
+    "name": "Infrastructure Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-104",
+    "name": "Performance Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-105",
+    "name": "Database Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-106",
+    "name": "Dependency Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-107",
+    "name": "UI/UX & A11y Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "browser"
+    ],
+    "skill_dependencies": [
+      "browser-e2e-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-108",
+    "name": "API & Contract Tester Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-109",
+    "name": "SEO Auditor Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "browser"
+    ],
+    "skill_dependencies": [
+      "pre-live-full-audit"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-110",
+    "name": "Adversarial Reviewer Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Claude Sonnet / Gemini Pro",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "adversarial-review"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-111",
+    "name": "Review Consolidator Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Gemini Pro / Claude Sonnet",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "finding-verification"
+    ],
+    "project_dependencies": "Global"
+  },
+  {
+    "id": "AGT-112",
+    "name": "Release Gatekeeper Role",
+    "runtime": "Antigravity IDE / Markdown",
+    "model": "Dynamic (Rule-based / Gemini Pro)",
+    "mcp_dependencies": [
+      "filesystem",
+      "git"
+    ],
+    "skill_dependencies": [
+      "release-gating"
+    ],
+    "project_dependencies": "Global"
+  }
+]

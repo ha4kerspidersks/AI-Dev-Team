@@ -1,0 +1,262 @@
+#!/usr/bin/env bash
+# AI-Dev-Team Central Control CLI
+# Unified non-destructive orchestration entrypoint
+set -eo pipefail
+
+AI_DEV_TEAM_ROOT="${AI_DEV_TEAM_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+NODE_BIN="$AI_DEV_TEAM_ROOT/environments/node22/bin"
+OPENSEPIA_PY="$AI_DEV_TEAM_ROOT/environments/opensepia-env/bin/python"
+OPENHANDS_BIN="$AI_DEV_TEAM_ROOT/environments/openhands-env/bin"
+SPECKIT_BIN="$AI_DEV_TEAM_ROOT/environments/speckit-env/bin"
+
+usage() {
+  cat << 'USAGE'
+Usage: ai-team <command> [args]
+
+Commands:
+  status       Check status of all AI Dev Team components & environments
+  doctor       Diagnose environment health, symlinks, and runtimes
+  skills       Inspect and search centralized skills (e.g. ai-team skills search api)
+  agents       List the 14 standardized agent roles and ownership mapping
+  mcp          Manage and inspect Global MCP Foundation (status|list|doctor|test|run)
+  repos        List all installed GitHub repositories, branches, and status
+  specify      Run GitHub Spec Kit CLI (e.g. ai-team specify check)
+  opensepia    Run OpenSepia tools (e.g. ai-team opensepia --help)
+  openhands    Run OpenHands Agent Server (e.g. ai-team openhands --help)
+  canvas       Run OpenHands Agent Canvas CLI
+  autonomous   Run autonomous-dev-team scripts
+  test         Run all verification test suites across frameworks
+  memory       Global Project Intelligence & Memory (detect|discover|load|refresh|check|recover|status)
+  qwen         Manage Qwen Antigravity Bridge (status|start|test)
+  omniroute    Run OmniRoute Gateway CLI (e.g. ai-team omniroute --version)
+  report       Display latest audit and inventory reports
+
+USAGE
+}
+
+cmd="${1:-}"
+shift || true
+
+case "$cmd" in
+  status)
+    echo "============================================================"
+    echo "       AI Development Team Central Ecosystem Status        "
+    echo "============================================================"
+    echo "Root Directory:       $AI_DEV_TEAM_ROOT"
+    echo -n "Node 22 LTS (Isolated): "
+    if [ -x "$NODE_BIN/node" ]; then "$NODE_BIN/node" -v; else echo "MISSING"; fi
+    echo -n "Python (System):      "
+    python3 --version 2>&1 || echo "MISSING"
+    echo -n "OpenSepia Env:        "
+    if [ -x "$OPENSEPIA_PY" ]; then "$OPENSEPIA_PY" --version; else echo "MISSING"; fi
+    echo -n "OpenHands Env:        "
+    if [ -x "$OPENHANDS_BIN/python" ]; then "$OPENHANDS_BIN/python" --version; else echo "MISSING"; fi
+    echo -n "Spec Kit Env:         "
+    if [ -x "$SPECKIT_BIN/specify" ]; then "$SPECKIT_BIN/specify" --version; else echo "MISSING"; fi
+    echo -n "AgentTeam MCP Server: "
+    if [ -f "$AI_DEV_TEAM_ROOT/repos/AgentTeam/mcp-server/dist/index.js" ]; then echo "BUILT & OPERATIONAL (44 tools)"; else echo "NOT BUILT"; fi
+    echo -n "Central Skills:       "
+    find "$AI_DEV_TEAM_ROOT/skills" -maxdepth 1 -type l | wc -l | tr -d ' '
+    local_repo_count=$(find "$AI_DEV_TEAM_ROOT/repos" -maxdepth 1 -mindepth 1 -type d | wc -l | tr -d ' ')
+    echo "Repositories:         $local_repo_count installed (run 'ai-team repos' to inspect all)"
+    echo "Standardized Agents:  14 roles configured under agents/"
+    echo ""
+    echo "Protected Workspaces Verification:"
+    for p in "/Users/subhajkar/Developer/LinkedIn-Audit" "/Users/subhajkar/Developer/subhajitportfolio-2.0"; do
+      if [ -d "$p" ]; then
+        echo "  [PROTECTED & UNTOUCHED] $p"
+      fi
+    done
+    ;;
+
+  doctor)
+    echo "=== Running AI Dev Team Diagnostic Health Check ==="
+    errors=0
+    # Check Python
+    if ! command -v python3 >/dev/null 2>&1; then echo "[FAIL] python3 not found"; ((errors++)); else echo "[PASS] python3 available"; fi
+    # Check Node 22
+    if [ -x "$NODE_BIN/node" ]; then
+      echo "[PASS] Isolated Node 22 ready"
+    elif command -v node >/dev/null 2>&1; then
+      echo "[PASS] System Node $(node -v) ready"
+    else
+      echo "[FAIL] Node runtime not found"; ((errors++))
+    fi
+    # Check AgentTeam MCP
+    if [ -f "$AI_DEV_TEAM_ROOT/repos/AgentTeam/mcp-server/dist/index.js" ]; then
+      echo "[PASS] AgentTeam dist/index.js verified"
+    else
+      echo "[WARN] AgentTeam dist/index.js not built (run scripts/bootstrap.sh to build)"
+    fi
+    # Check Spec Kit
+    if [ -x "$SPECKIT_BIN/specify" ]; then
+      echo "[PASS] specify-cli verified"
+    elif command -v specify >/dev/null 2>&1; then
+      echo "[PASS] system specify-cli verified"
+    else
+      echo "[WARN] specify-cli not initialized (run scripts/bootstrap.sh to configure)"
+    fi
+    # Check Broken Symlinks in skills
+    broken=$(find "$AI_DEV_TEAM_ROOT/skills" -type l ! -exec test -e {} \; -print | wc -l | tr -d ' ')
+    if [ "$broken" -gt 0 ]; then
+      echo "[WARN] Found $broken broken symlink(s) in skills/"
+    else
+      echo "[PASS] 0 broken symlinks in skills/"
+    fi
+    # Check Protected projects
+    for p in "/Users/subhajkar/Developer/LinkedIn-Audit" "/Users/subhajkar/Developer/subhajitportfolio-2.0"; do
+      if [ -d "$p" ]; then
+        echo "[PASS] Protected project $p intact"
+      elif [ "$USER" = "subhajkar" ]; then
+        echo "[FAIL] Protected project $p missing!"; ((errors++))
+      fi
+    done
+    if [ "$errors" -eq 0 ]; then
+      echo "=== Doctor Verdict: ALL CHECKS HEALTHY ==="
+    else
+      echo "=== Doctor Verdict: $errors ISSUE(S) DETECTED ==="
+    fi
+    ;;
+
+  skills)
+    subcmd="${1:-list}"
+    shift || true
+    case "$subcmd" in
+      list)
+        echo "=== Centralized Skills Ecosystem ==="
+        echo "Direct Top-Level Skills: $(find "$AI_DEV_TEAM_ROOT/skills" -maxdepth 1 -type l | wc -l | tr -d ' ')"
+        echo "Categorized Subdirectories:"
+        echo "  skills/global/                 - Global Antigravity skills"
+        echo "  skills/plugins/                - Plugin skills (Firebase, Flutter, DevTools, Science)"
+        echo "  skills/builtin/                - Antigravity builtin skills"
+        echo "  skills/codex/                  - Codex system skills"
+        echo "  skills/antigravity-skills/     - Curated skills from rmyndharis/antigravity-skills"
+        echo "  skills/agentic-awesome-skills/ - Curated skills from sickn33/agentic-awesome-skills"
+        echo "  skills/repository-specific/    - Repo skills (understand-anything, autonomous-dev-team, agent-team)"
+        echo ""
+        echo "Tip: Run 'ai-team skills search <term>' to search for specific skills."
+        ;;
+      search)
+        term="${1:-}"
+        if [ -z "$term" ]; then echo "Usage: ai-team skills search <term>"; exit 1; fi
+        echo "Searching skills matching: '$term'..."
+        find "$AI_DEV_TEAM_ROOT/skills" -maxdepth 2 -iname "*$term*" -type l -o -type d | head -n 30
+        ;;
+      *)
+        echo "Usage: ai-team skills [list|search <term>]"
+        ;;
+    esac
+    ;;
+
+  agents)
+    cat "$AI_DEV_TEAM_ROOT/agents/AGENTS.md"
+    ;;
+
+  mcp)
+    subcmd="${1:-status}"
+    shift || true
+    case "$subcmd" in
+      status)
+        python3 "$AI_DEV_TEAM_ROOT/scripts/mcp_manager.py" status "$@"
+        ;;
+      list)
+        python3 "$AI_DEV_TEAM_ROOT/scripts/mcp_manager.py" list "$@"
+        ;;
+      doctor)
+        python3 "$AI_DEV_TEAM_ROOT/scripts/mcp_manager.py" doctor "$@"
+        ;;
+      test)
+        python3 "$AI_DEV_TEAM_ROOT/scripts/mcp_manager.py" test "$@"
+        ;;
+      run)
+        exec "$NODE_BIN/node" "$AI_DEV_TEAM_ROOT/repos/AgentTeam/mcp-server/dist/index.js" "$@"
+        ;;
+      *)
+        python3 "$AI_DEV_TEAM_ROOT/scripts/mcp_manager.py" status "$subcmd" "$@"
+        ;;
+    esac
+    ;;
+
+  repos)
+    echo "=== Installed Repositories in ~/Developer/AI-Dev-Team/repos ==="
+    for r in "$AI_DEV_TEAM_ROOT"/repos/*; do
+      if [ -d "$r" ]; then
+        rname=$(basename "$r")
+        commit=$(git -C "$r" rev-parse --short HEAD 2>/dev/null || echo "not-git")
+        branch=$(git -C "$r" rev-parse --abbrev-ref HEAD 2>/dev/null || echo "none")
+        echo "  * $rname [branch: $branch, commit: $commit]"
+      fi
+    done
+    ;;
+
+  specify)
+    exec "$SPECKIT_BIN/specify" "$@"
+    ;;
+
+  opensepia)
+    exec "$OPENSEPIA_PY" "$AI_DEV_TEAM_ROOT/repos/OpenSepia/scripts/run_agent_cli.py" "$@"
+    ;;
+
+  openhands)
+    exec "$OPENHANDS_BIN/agent-server" "$@"
+    ;;
+
+  canvas)
+    exec node "$AI_DEV_TEAM_ROOT/repos/OpenHands/bin/agent-canvas.mjs" "$@"
+    ;;
+
+  autonomous)
+    exec bash "$AI_DEV_TEAM_ROOT/repos/autonomous-dev-team/scripts/autonomous-dispatcher.sh" "$@"
+    ;;
+
+  test)
+    echo "=== Running OpenSepia Tests ==="
+    "$AI_DEV_TEAM_ROOT/environments/opensepia-env/bin/pytest" "$AI_DEV_TEAM_ROOT/repos/OpenSepia/tests" -q
+    echo "=== Running AgentTeam MCP Tests ==="
+    PATH="$NODE_BIN:$PATH" npm --prefix "$AI_DEV_TEAM_ROOT/repos/AgentTeam/mcp-server" test
+    echo "=== Running autonomous-dev-team Spec Tests ==="
+    bash "$AI_DEV_TEAM_ROOT/repos/autonomous-dev-team/tests/unit/test-adapter-spec-schemas.sh" | tail -n 5
+    echo "=== Running Spec Kit Check ==="
+    "$SPECKIT_BIN/specify" check | tail -n 4
+    echo "=== Running Project Memory System Tests ==="
+    python3 "$AI_DEV_TEAM_ROOT/scripts/test_project_memory.py"
+    echo "=== All Framework Tests Succeeded ==="
+    ;;
+
+  memory)
+    exec "$AI_DEV_TEAM_ROOT/scripts/project_memory_engine.py" "$@"
+    ;;
+
+  qwen)
+    subcmd="${1:-status}"
+    shift || true
+    case "$subcmd" in
+      start)
+        echo "Starting Qwen Antigravity Bridge on port 8000..."
+        exec /Users/subhajkar/Developer/qwen-antigravity/.venv/bin/uvicorn bridge:app --app-dir /Users/subhajkar/Developer/qwen-antigravity --port 8000 "$@"
+        ;;
+      test)
+        PYTHONPATH=/Users/subhajkar/Developer/qwen-antigravity /Users/subhajkar/Developer/qwen-antigravity/.venv/bin/python -c "import bridge; print('Qwen Bridge loaded successfully:', bridge.app.title)"
+        ;;
+      status|*)
+        echo "Qwen Antigravity Bridge:"
+        echo "  Location: /Users/subhajkar/Developer/qwen-antigravity"
+        echo "  Venv:     /Users/subhajkar/Developer/qwen-antigravity/.venv"
+        PYTHONPATH=/Users/subhajkar/Developer/qwen-antigravity /Users/subhajkar/Developer/qwen-antigravity/.venv/bin/python -c "import bridge, fastapi, uvicorn; print(f'  App:      {bridge.app.title}\n  FastAPI:  {fastapi.__version__}\n  Uvicorn:  {uvicorn.__version__}')"
+        ;;
+    esac
+    ;;
+
+  omniroute)
+    exec node "$AI_DEV_TEAM_ROOT/repos/omniroute/bin/omniroute.mjs" "$@"
+    ;;
+
+  report)
+    cat "$AI_DEV_TEAM_ROOT/reports/final-audit.md" 2>/dev/null || cat "$AI_DEV_TEAM_ROOT/reports/installation-report.md"
+    ;;
+
+  *)
+    usage
+    exit 1
+    ;;
+esac

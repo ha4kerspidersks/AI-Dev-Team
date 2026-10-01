@@ -1,0 +1,257 @@
+# ============================================================
+# SECRETS
+# ============================================================
+
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+
+*.secret
+*.secrets
+
+secrets/
+secret/
+credentials/
+credential/
+tokens/
+token/
+auth/
+oauth/
+
+# ============================================================
+# PRIVATE KEYS / CERTIFICATES
+# ============================================================
+
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+known_hosts
+
+# ============================================================
+# CREDENTIAL-LIKE FILES (SPECIFIC)
+# ============================================================
+
+*api_key*
+*apikey*
+*access_token*
+*refresh_token*
+*client_secret*
+*password*
+*passwd*
+*private_key*
+
+# Exclude exceptions to credential names for legitimate source files
+!docs/**
+!reports/**
+!README.md
+!scripts/build_master_catalog_16sheets.py
+!scripts/generate_master_catalog.py
+!inventory/agents.json
+!inventory/agents.yaml
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+.venv/
+venv/
+env/
+ENV/
+environments/
+
+__pycache__/
+*.py[cod]
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# NODE
+# ============================================================
+
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+
+# ============================================================
+# CACHE
+# ============================================================
+
+.cache/
+cache/
+tmp/
+temp/
+
+# ============================================================
+# LOGS
+# ============================================================
+
+*.log
+*.trace
+*.out
+
+logs/
+log/
+
+# ============================================================
+# DATABASES
+# ============================================================
+
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+
+# ============================================================
+# BUILD
+# ============================================================
+
+dist/
+build/
+out/
+target/
+coverage/
+htmlcov/
+
+# ============================================================
+# BACKUPS
+# ============================================================
+
+backups/
+backup/
+
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================================
+# BROWSER / AUTH STATE
+# ============================================================
+
+browser-profile/
+browser_profiles/
+
+chrome-profile/
+chromium-profile/
+
+playwright/.auth/
+
+.cookies/
+cookies/
+
+sessions/
+
+# ============================================================
+# MODEL CACHE
+# ============================================================
+
+model-cache/
+model_cache/
+
+models/.cache/
+
+huggingface/
+
+# ============================================================
+# TERRAFORM
+# ============================================================
+
+.terraform/
+
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# ============================================================
+# FREELLMAPI LOCAL STATE
+# ============================================================
+
+freellmapi/data/
+freellmapi/db/
+freellmapi/secrets/
+freellmapi/credentials/
+freellmapi/auth/
+freellmapi/tokens/
+
+freellmapi-agents/.crush/
+freellmapi-agents/data/*.db
+freellmapi-agents/.validation/
+freellmapi-agents/.aider.chat.history.md
+freellmapi-agents/.aider.input.history
+
+# ============================================================
+# MCP LOCAL CREDENTIALS / STATE
+# ============================================================
+
+mcp/**/credentials*
+mcp/**/secrets*
+mcp/**/.env*
+mcp/**/tokens*
+mcp/**/auth*
+mcp/**/oauth*
+mcp/**/sessions/
+mcp/**/state/
+
+# ============================================================
+# QWEN LOCAL CREDENTIALS
+# ============================================================
+
+qwen-antigravity/.env*
+qwen-antigravity/secrets/
+qwen-antigravity/credentials/
+
+# ============================================================
+# IDE / OS
+# ============================================================
+
+.idea/
+
+*.code-workspace
+
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+Thumbs.db
+
+# ============================================================
+# TEMPORARY FILES
+# ============================================================
+
+*.tmp
+*.temp
+
+*.swp
+*.swo
+*~
+
+# ============================================================
+# THIRD-PARTY REPOSITORIES & WORKSPACES
+# Managed via registry/manifest.yaml and cloned via scripts/bootstrap.sh
+# ============================================================
+
+repos/
+plugins/ecc/
+infrastructure/omniroute/
+test-projects/
+integration-workspace/
+reference/

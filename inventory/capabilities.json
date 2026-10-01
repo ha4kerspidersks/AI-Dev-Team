@@ -1,0 +1,1062 @@
+[
+  {
+    "id": "AGT-001",
+    "name": "Master Orchestrator",
+    "primary_category": "Orchestration",
+    "secondary_category": "Multi-Backend",
+    "capabilities": [
+      "Task Decomposition",
+      "Risk Gating",
+      "Multi-Backend Routing",
+      "Parallel Work Packages",
+      "Safety Governance"
+    ]
+  },
+  {
+    "id": "AGT-002",
+    "name": "Architect Specialist",
+    "primary_category": "Software Development",
+    "secondary_category": "Cloud / IAM",
+    "capabilities": [
+      "System Architecture",
+      "C4 Modeling",
+      "Database Schemas",
+      "API Contracts",
+      "IAM Boundaries",
+      "Tradeoff Analysis"
+    ]
+  },
+  {
+    "id": "AGT-003",
+    "name": "Developer Agent",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Full Stack Implementation",
+      "Refactoring",
+      "Clean Architecture",
+      "TDD",
+      "Multi-Language Development"
+    ]
+  },
+  {
+    "id": "AGT-004",
+    "name": "Fast Developer",
+    "primary_category": "Software Development",
+    "secondary_category": "Debugging",
+    "capabilities": [
+      "Single-File Edits",
+      "Rapid Iteration",
+      "Syntax Fixes",
+      "CSS Adjustments"
+    ]
+  },
+  {
+    "id": "AGT-005",
+    "name": "Tester Agent",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "Unit Testing",
+      "Integration Testing",
+      "TDD Red-Green-Refactor",
+      "E2E Testing",
+      "Coverage Reports"
+    ]
+  },
+  {
+    "id": "AGT-006",
+    "name": "Security Reviewer",
+    "primary_category": "Cybersecurity",
+    "secondary_category": "Security Audit",
+    "capabilities": [
+      "SAST Scanning",
+      "Threat Modeling",
+      "Secret Leak Prevention",
+      "OWASP Audits",
+      "Cryptographic Review"
+    ]
+  },
+  {
+    "id": "AGT-007",
+    "name": "Deep Reviewer",
+    "primary_category": "Code Review",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "Concurrency Audits",
+      "Race Condition Detection",
+      "Deadlock Analysis",
+      "Cross-Module Review",
+      "Boundary Enforcement"
+    ]
+  },
+  {
+    "id": "AGT-008",
+    "name": "Second Opinion",
+    "primary_category": "Code Review",
+    "secondary_category": "Quality Assurance",
+    "capabilities": [
+      "Bias-Free Audit",
+      "Alternative Implementation Evaluation",
+      "Robustness Critique",
+      "Edge Case Detection"
+    ]
+  },
+  {
+    "id": "AGT-009",
+    "name": "Researcher Agent",
+    "primary_category": "Research",
+    "secondary_category": "Web Research",
+    "capabilities": [
+      "Web Research",
+      "API Documentation Lookup",
+      "Competitive Analysis",
+      "Literature Review"
+    ]
+  },
+  {
+    "id": "AGT-010",
+    "name": "Documentation Agent",
+    "primary_category": "Documentation",
+    "secondary_category": "Technical Writing",
+    "capabilities": [
+      "API Documentation",
+      "Living Docs Governance",
+      "ADR Creation",
+      "Onboarding Manuals",
+      "Markdown Architecture"
+    ]
+  },
+  {
+    "id": "AGT-011",
+    "name": "Git Release Agent",
+    "primary_category": "Git / GitHub",
+    "secondary_category": "DevOps",
+    "capabilities": [
+      "Conventional Commits",
+      "Changelog Automation",
+      "PR Drafting",
+      "Branch Management",
+      "Release Tagging"
+    ]
+  },
+  {
+    "id": "AGT-012",
+    "name": "GitHub Copilot Bridge",
+    "primary_category": "Git / GitHub",
+    "secondary_category": "CI/CD",
+    "capabilities": [
+      "Copilot Multi-Model Routing",
+      "GitHub CLI Integration",
+      "Autonomous Issue/PR Resolution",
+      "Repository Awareness"
+    ]
+  },
+  {
+    "id": "AGT-013",
+    "name": "Firestore Rules Author",
+    "primary_category": "Cloud",
+    "secondary_category": "Cybersecurity",
+    "capabilities": [
+      "Firestore Rules Design",
+      "RBAC Security",
+      "Resource Limits",
+      "Update Bypass Prevention"
+    ]
+  },
+  {
+    "id": "AGT-014",
+    "name": "Flutter A11y Agent",
+    "primary_category": "Mobile",
+    "secondary_category": "Testing / QA",
+    "capabilities": [
+      "Flutter A11y Audits",
+      "Widget Tree Analysis",
+      "Screen Reader Semantics",
+      "Tap Target Verification"
+    ]
+  },
+  {
+    "id": "AGT-015",
+    "name": "Product Manager Role",
+    "primary_category": "Software Development",
+    "secondary_category": "Product Management",
+    "capabilities": [
+      "User Story Mapping",
+      "PRD Generation",
+      "Acceptance Criteria",
+      "Roadmap Planning"
+    ]
+  },
+  {
+    "id": "AGT-016",
+    "name": "Project Manager Role",
+    "primary_category": "Software Development",
+    "secondary_category": "Project Management",
+    "capabilities": [
+      "Sprint Scheduling",
+      "Task Assignment",
+      "Dependency Tracking",
+      "Agile Board Sync"
+    ]
+  },
+  {
+    "id": "AGT-017",
+    "name": "Specification Engineer Role",
+    "primary_category": "Documentation",
+    "secondary_category": "Specifications",
+    "capabilities": [
+      "Spec-Driven Development",
+      "Checklist Generation",
+      "Requirement Refinement",
+      "SDD Process"
+    ]
+  },
+  {
+    "id": "AGT-018",
+    "name": "Software Architect Role",
+    "primary_category": "Software Development",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "C4 Architecture",
+      "Data Schema Design",
+      "Microservices Topology",
+      "Boundary Isolation"
+    ]
+  },
+  {
+    "id": "AGT-019",
+    "name": "Frontend Developer Role",
+    "primary_category": "Software Development",
+    "secondary_category": "Frontend",
+    "capabilities": [
+      "React/Vue Components",
+      "Responsive CSS",
+      "A11y Standards",
+      "Micro-Animations",
+      "State Management"
+    ]
+  },
+  {
+    "id": "AGT-020",
+    "name": "Backend Developer Role",
+    "primary_category": "Software Development",
+    "secondary_category": "Backend",
+    "capabilities": [
+      "REST/GraphQL APIs",
+      "Database Migrations",
+      "Authentication / JWT",
+      "Performance Optimization"
+    ]
+  },
+  {
+    "id": "AGT-021",
+    "name": "AI/ML Developer Role",
+    "primary_category": "AI / LLM",
+    "secondary_category": "Data Engineering",
+    "capabilities": [
+      "LLM API Integration",
+      "RAG Pipeline Construction",
+      "Embedding Tuning",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "id": "AGT-022",
+    "name": "DevOps Engineer Role",
+    "primary_category": "DevOps",
+    "secondary_category": "Cloud",
+    "capabilities": [
+      "GitHub Actions",
+      "Docker Packaging",
+      "Kubernetes Manifests",
+      "Terraform",
+      "Cloud Deployments"
+    ]
+  },
+  {
+    "id": "AGT-023",
+    "name": "QA Engineer Role",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "Unit Testing",
+      "Playwright E2E",
+      "Regression Suites",
+      "Test Assertions"
+    ]
+  },
+  {
+    "id": "AGT-024",
+    "name": "Security Engineer Role",
+    "primary_category": "Cybersecurity",
+    "secondary_category": "Security Audit",
+    "capabilities": [
+      "SAST Scanning",
+      "Secret Auditing",
+      "Supply Chain Review",
+      "Vulnerability Remediation"
+    ]
+  },
+  {
+    "id": "AGT-025",
+    "name": "Code Reviewer Role",
+    "primary_category": "Code Review",
+    "secondary_category": "Quality Assurance",
+    "capabilities": [
+      "PR Code Review",
+      "Static Analysis",
+      "Complexity Reduction",
+      "Anti-Pattern Flagging"
+    ]
+  },
+  {
+    "id": "AGT-026",
+    "name": "Documentation Engineer Role",
+    "primary_category": "Documentation",
+    "secondary_category": "Technical Writing",
+    "capabilities": [
+      "API Reference",
+      "Architecture Documentation",
+      "Markdown Linting",
+      "User Guides"
+    ]
+  },
+  {
+    "id": "AGT-027",
+    "name": "Research Engineer Role",
+    "primary_category": "Research",
+    "secondary_category": "Web Research",
+    "capabilities": [
+      "Scientific Research",
+      "Algorithm Analysis",
+      "Literature Search",
+      "Ecosystem Discovery"
+    ]
+  },
+  {
+    "id": "AGT-028",
+    "name": "Git/GitHub Engineer Role",
+    "primary_category": "Git / GitHub",
+    "secondary_category": "DevOps",
+    "capabilities": [
+      "Git Worktrees",
+      "Issue Triage",
+      "Branch Staging",
+      "GitHub CLI Automation"
+    ]
+  },
+  {
+    "id": "AGT-029",
+    "name": "AgentTeam Full-Stack Developer",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Full-Stack Dev",
+      "SQLite State Tracking",
+      "AgentTeam Tools"
+    ]
+  },
+  {
+    "id": "AGT-030",
+    "name": "AgentTeam Backend Developer",
+    "primary_category": "Software Development",
+    "secondary_category": "Backend",
+    "capabilities": [
+      "Backend API",
+      "Data Schemas",
+      "AgentTeam Coordination"
+    ]
+  },
+  {
+    "id": "AGT-031",
+    "name": "AgentTeam Frontend Developer",
+    "primary_category": "Software Development",
+    "secondary_category": "Frontend",
+    "capabilities": [
+      "Frontend Engineering",
+      "UI Components",
+      "AgentTeam Coordination"
+    ]
+  },
+  {
+    "id": "AGT-032",
+    "name": "AgentTeam Mobile Developer",
+    "primary_category": "Mobile",
+    "secondary_category": "Flutter / React Native",
+    "capabilities": [
+      "Mobile UI",
+      "Cross-Platform Logic",
+      "AgentTeam Coordination"
+    ]
+  },
+  {
+    "id": "AGT-033",
+    "name": "AgentTeam DevOps Engineer",
+    "primary_category": "DevOps",
+    "secondary_category": "Cloud",
+    "capabilities": [
+      "CI/CD",
+      "Dockerization",
+      "AgentTeam Task Logging"
+    ]
+  },
+  {
+    "id": "AGT-034",
+    "name": "AgentTeam QA Engineer",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "Test Verification",
+      "Bug Reporting",
+      "AgentTeam Status Sync"
+    ]
+  },
+  {
+    "id": "AGT-035",
+    "name": "AgentTeam Security Engineer",
+    "primary_category": "Cybersecurity",
+    "secondary_category": "Security Audit",
+    "capabilities": [
+      "Security Policy Check",
+      "Risk Logging",
+      "AgentTeam Governance"
+    ]
+  },
+  {
+    "id": "AGT-036",
+    "name": "AgentTeam Product Manager",
+    "primary_category": "Software Development",
+    "secondary_category": "Product Management",
+    "capabilities": [
+      "Milestone Definition",
+      "Story Creation",
+      "AgentTeam DB Sync"
+    ]
+  },
+  {
+    "id": "AGT-037",
+    "name": "AgentTeam Project Manager",
+    "primary_category": "Software Development",
+    "secondary_category": "Project Management",
+    "capabilities": [
+      "Task Scheduling",
+      "Team Allocation",
+      "AgentTeam Task Log"
+    ]
+  },
+  {
+    "id": "AGT-038",
+    "name": "AgentTeam Data Engineer",
+    "primary_category": "Data Engineering",
+    "secondary_category": "Databases",
+    "capabilities": [
+      "ETL Pipelines",
+      "Data Modeling",
+      "AgentTeam Coordination"
+    ]
+  },
+  {
+    "id": "AGT-039",
+    "name": "AgentTeam Data Scientist",
+    "primary_category": "Data Analysis",
+    "secondary_category": "AI / ML",
+    "capabilities": [
+      "Statistical Modeling",
+      "ML Experimentation",
+      "AgentTeam Logging"
+    ]
+  },
+  {
+    "id": "AGT-040",
+    "name": "AgentTeam UX Researcher",
+    "primary_category": "Software Development",
+    "secondary_category": "UI / UX",
+    "capabilities": [
+      "User Journey Mapping",
+      "Usability Heuristics",
+      "AgentTeam Collaboration"
+    ]
+  },
+  {
+    "id": "AGT-041",
+    "name": "AgentTeam UX/UI Designer",
+    "primary_category": "Software Development",
+    "secondary_category": "UI / UX",
+    "capabilities": [
+      "Design Token Architecture",
+      "Component Layout",
+      "AgentTeam Collaboration"
+    ]
+  },
+  {
+    "id": "AGT-042",
+    "name": "OpenSepia Product Owner (PO)",
+    "primary_category": "Software Development",
+    "secondary_category": "Product Management",
+    "capabilities": [
+      "Continuous Agile Sprints",
+      "Story Creation",
+      "Acceptance Review"
+    ]
+  },
+  {
+    "id": "AGT-043",
+    "name": "OpenSepia Project Manager (PM)",
+    "primary_category": "Software Development",
+    "secondary_category": "Project Management",
+    "capabilities": [
+      "Sprint Assignment",
+      "Milestone Tracking",
+      "GitLab/GitHub Board Sync"
+    ]
+  },
+  {
+    "id": "AGT-044",
+    "name": "OpenSepia Developer 1 (dev1)",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Story Implementation",
+      "MR Creation",
+      "Code Authoring"
+    ]
+  },
+  {
+    "id": "AGT-045",
+    "name": "OpenSepia Developer 2 (dev2)",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Concurrent Implementation",
+      "Parallel Branching",
+      "MR Submission"
+    ]
+  },
+  {
+    "id": "AGT-046",
+    "name": "OpenSepia QA Tester (tester)",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "Automated Testing",
+      "Acceptance Verification",
+      "Defect Logging"
+    ]
+  },
+  {
+    "id": "AGT-047",
+    "name": "OpenSepia DevOps (devops)",
+    "primary_category": "DevOps",
+    "secondary_category": "CI/CD",
+    "capabilities": [
+      "CI/CD Pipeline Setup",
+      "Docker Configurations",
+      "Environment Builds"
+    ]
+  },
+  {
+    "id": "AGT-048",
+    "name": "OpenSepia Security Analyst (sec_analyst)",
+    "primary_category": "Cybersecurity",
+    "secondary_category": "Security Audit",
+    "capabilities": [
+      "MR Security Review",
+      "Secret Scanning",
+      "Vulnerability Gate"
+    ]
+  },
+  {
+    "id": "AGT-049",
+    "name": "OpenSepia Architecture Reviewer",
+    "primary_category": "Code Review",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "Design Verification",
+      "Pattern Adherence",
+      "Refactoring Guidance"
+    ]
+  },
+  {
+    "id": "AGT-050",
+    "name": "OpenSepia Scrum Master",
+    "primary_category": "Software Development",
+    "secondary_category": "Agile / Sprints",
+    "capabilities": [
+      "Sprint Ceremonies",
+      "Retrospective Reports",
+      "Process Unblocking"
+    ]
+  },
+  {
+    "id": "AGT-051",
+    "name": "Autonomous Dispatcher",
+    "primary_category": "Automation",
+    "secondary_category": "DevOps",
+    "capabilities": [
+      "Issue Scanning",
+      "Cron Tick Scheduling",
+      "Worktree Orchestration"
+    ]
+  },
+  {
+    "id": "AGT-052",
+    "name": "Autonomous Dev Agent",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Worktree Isolation",
+      "TDD Cycle",
+      "Adapter CLI Execution"
+    ]
+  },
+  {
+    "id": "AGT-053",
+    "name": "Autonomous Review Agent",
+    "primary_category": "Code Review",
+    "secondary_category": "Git / GitHub",
+    "capabilities": [
+      "Checklist Verification",
+      "Merge Conflict Detection",
+      "Automated Merging"
+    ]
+  },
+  {
+    "id": "AGT-054",
+    "name": "OpenHands Agent Canvas",
+    "primary_category": "Software Development",
+    "secondary_category": "Full Stack",
+    "capabilities": [
+      "Visual Agent Canvas",
+      "Containerized Sandbox",
+      "Autonomous Code Generation",
+      "Interactive Terminal"
+    ]
+  },
+  {
+    "id": "AGT-055",
+    "name": "Strix Pentesting Agent",
+    "primary_category": "Cybersecurity",
+    "secondary_category": "Penetration Testing",
+    "capabilities": [
+      "Autonomous Penetration Testing",
+      "Vulnerability Exploitation Verification",
+      "Remediation Patching"
+    ]
+  },
+  {
+    "id": "AGT-056",
+    "name": "Understand-Anything AST Engine",
+    "primary_category": "Code Review",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "AST Parsing (Tree-sitter)",
+      "Knowledge Graph Construction",
+      "Interactive Dashboard",
+      "Onboarding Guides"
+    ]
+  },
+  {
+    "id": "AGT-057",
+    "name": "GitHub Spec Kit CLI",
+    "primary_category": "Documentation",
+    "secondary_category": "Specifications",
+    "capabilities": [
+      "Spec-Driven Development",
+      "Checklist Auditing",
+      "Idea Assessment",
+      "Convergence Verification"
+    ]
+  },
+  {
+    "id": "AGT-058",
+    "name": "AI Fraud Investigation Agent",
+    "primary_category": "Data Analysis",
+    "secondary_category": "Cybersecurity",
+    "capabilities": [
+      "Public Records Cross-Exam",
+      "Anomaly Detection",
+      "Audit Report Gen"
+    ]
+  },
+  {
+    "id": "AGT-059",
+    "name": "Insurance Claim Live Agent Team",
+    "primary_category": "Automation",
+    "secondary_category": "Voice AI",
+    "capabilities": [
+      "Voice Conversation",
+      "Claim Settlement",
+      "Document Inspection"
+    ]
+  },
+  {
+    "id": "AGT-060",
+    "name": "AI Dashboard Canvas Agent",
+    "primary_category": "Frontend",
+    "secondary_category": "Generative UI",
+    "capabilities": [
+      "Generative UI",
+      "Dynamic Dashboard Widgets",
+      "Canvas Layouts"
+    ]
+  },
+  {
+    "id": "AGT-061",
+    "name": "AI Deep Research Agent",
+    "primary_category": "Research",
+    "secondary_category": "Web Research",
+    "capabilities": [
+      "Iterative Search",
+      "Source Evaluation",
+      "Comprehensive Report Gen"
+    ]
+  },
+  {
+    "id": "AGT-062",
+    "name": "AI Financial Coach Agent",
+    "primary_category": "Data Analysis",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "Financial Budgeting",
+      "Expense Analysis",
+      "Cashflow Projections"
+    ]
+  },
+  {
+    "id": "AGT-063",
+    "name": "AI Shadcn Component Generator",
+    "primary_category": "Frontend",
+    "secondary_category": "Web Development",
+    "capabilities": [
+      "Shadcn UI Generation",
+      "React Tailwind Code",
+      "Component Playground"
+    ]
+  },
+  {
+    "id": "AGT-064",
+    "name": "AI MCP App Builder",
+    "primary_category": "AI / LLM",
+    "secondary_category": "Tooling",
+    "capabilities": [
+      "MCP Server Scaffolding",
+      "Tool Definition",
+      "Schema Generation"
+    ]
+  },
+  {
+    "id": "AGT-065",
+    "name": "AI Knowledge Explorer",
+    "primary_category": "Research",
+    "secondary_category": "Data Analysis",
+    "capabilities": [
+      "Knowledge Graph Traversal",
+      "Entity Extraction",
+      "Semantic Search"
+    ]
+  },
+  {
+    "id": "AGT-066",
+    "name": "Mixture of Agents (MoA)",
+    "primary_category": "AI / LLM",
+    "secondary_category": "Research",
+    "capabilities": [
+      "Multi-Model Consensus",
+      "Layered Synthesis",
+      "Ensemble Reasoning"
+    ]
+  },
+  {
+    "id": "AGT-067",
+    "name": "AI Data Analysis Agent",
+    "primary_category": "Data Analysis",
+    "secondary_category": "Python",
+    "capabilities": [
+      "Pandas Scripting",
+      "Data Cleaning",
+      "Matplotlib Charts",
+      "Statistical Summaries"
+    ]
+  },
+  {
+    "id": "AGT-068",
+    "name": "Web Scraping AI Agent",
+    "primary_category": "Web Scraping",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "DOM Navigation",
+      "Dynamic Page Extraction",
+      "Structured JSON Extraction"
+    ]
+  },
+  {
+    "id": "AGT-069",
+    "name": "AI Reasoning Agent",
+    "primary_category": "AI / LLM",
+    "secondary_category": "Research",
+    "capabilities": [
+      "Chain-of-Thought",
+      "Self-Reflection",
+      "Logic Verification"
+    ]
+  },
+  {
+    "id": "AGT-070",
+    "name": "Startup Trend Analysis Agent",
+    "primary_category": "Research",
+    "secondary_category": "Market Research",
+    "capabilities": [
+      "Market Sizing",
+      "Competitive Analysis",
+      "Opportunity Assessment"
+    ]
+  },
+  {
+    "id": "AGT-071",
+    "name": "Customer Support Voice Agent",
+    "primary_category": "Automation",
+    "secondary_category": "Voice AI",
+    "capabilities": [
+      "Real-Time Voice",
+      "Audio Streaming",
+      "Customer Support QA"
+    ]
+  },
+  {
+    "id": "AGT-072",
+    "name": "DeepSeek Local RAG Agent",
+    "primary_category": "AI / LLM",
+    "secondary_category": "Data Analysis",
+    "capabilities": [
+      "Local RAG",
+      "Offline Inference",
+      "Document Embedding"
+    ]
+  },
+  {
+    "id": "AGT-073",
+    "name": "Project Graveyard Agent",
+    "primary_category": "Software Development",
+    "secondary_category": "Productivity",
+    "capabilities": [
+      "Codebase Autopsy",
+      "Asset Extraction",
+      "Postmortem Generation"
+    ]
+  },
+  {
+    "id": "AGT-074",
+    "name": "Qwen Antigravity Bridge",
+    "primary_category": "Model Router",
+    "secondary_category": "AI / LLM",
+    "capabilities": [
+      "Gemini-to-OpenAI Translation",
+      "Hugging Face Routing",
+      "Streaming SSE"
+    ]
+  },
+  {
+    "id": "AGT-075",
+    "name": "OmniRoute Gateway",
+    "primary_category": "Model Router",
+    "secondary_category": "Multi-Backend",
+    "capabilities": [
+      "359 Provider Gateway",
+      "150+ Free Tiers",
+      "Auto-Fallback",
+      "Token Compression"
+    ]
+  },
+  {
+    "id": "AGT-076",
+    "name": "LinkedIn Profile Reader",
+    "primary_category": "LinkedIn / Social Media",
+    "secondary_category": "Automation",
+    "capabilities": [
+      "AppleScript Chrome Tab Inspection",
+      "Profile HTML Parsing",
+      "Rubric Evaluation"
+    ]
+  },
+  {
+    "id": "AGT-077",
+    "name": "Portfolio QA & Security Suite",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Cybersecurity",
+    "capabilities": [
+      "Playwright E2E",
+      "Axe A11y",
+      "Burp Suite Scans",
+      "Penetration Checklists"
+    ]
+  },
+  {
+    "id": "AGT-099",
+    "name": "Pre-Live Full Audit Orchestrator",
+    "primary_category": "Orchestration",
+    "secondary_category": "Testing / QA",
+    "capabilities": [
+      "Orchestration",
+      "Master Audit Coordinator",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-100",
+    "name": "Code Auditor Role",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "Testing / QA",
+      "Static Analysis & Quality",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-101",
+    "name": "Security Auditor Role",
+    "primary_category": "Security",
+    "secondary_category": "Architecture",
+    "capabilities": [
+      "Security",
+      "Application Security & OWASP",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-102",
+    "name": "Bug & Logic Auditor Role",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Backend Development",
+    "capabilities": [
+      "Testing / QA",
+      "Defect & Edge Case Detection",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-103",
+    "name": "Infrastructure Auditor Role",
+    "primary_category": "DevOps",
+    "secondary_category": "Cloud",
+    "capabilities": [
+      "DevOps",
+      "DevOps & Cloud Security",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-104",
+    "name": "Performance Auditor Role",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Web Development",
+    "capabilities": [
+      "Testing / QA",
+      "Performance Profiling",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-105",
+    "name": "Database Auditor Role",
+    "primary_category": "Data / Analytics",
+    "secondary_category": "Backend Development",
+    "capabilities": [
+      "Data / Analytics",
+      "Database Architecture",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-106",
+    "name": "Dependency Auditor Role",
+    "primary_category": "Security",
+    "secondary_category": "DevOps",
+    "capabilities": [
+      "Security",
+      "Supply Chain Security",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-107",
+    "name": "UI/UX & A11y Auditor Role",
+    "primary_category": "Frontend Development",
+    "secondary_category": "Accessibility",
+    "capabilities": [
+      "Frontend Development",
+      "Frontend & Accessibility",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-108",
+    "name": "API & Contract Tester Role",
+    "primary_category": "Testing / QA",
+    "secondary_category": "Backend Development",
+    "capabilities": [
+      "Testing / QA",
+      "API & Integration Testing",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-109",
+    "name": "SEO Auditor Role",
+    "primary_category": "Web Development",
+    "secondary_category": "Frontend Development",
+    "capabilities": [
+      "Web Development",
+      "Search Engine Optimization",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-110",
+    "name": "Adversarial Reviewer Role",
+    "primary_category": "Security",
+    "secondary_category": "Testing / QA",
+    "capabilities": [
+      "Security",
+      "Red Team / Assumption Challenging",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-111",
+    "name": "Review Consolidator Role",
+    "primary_category": "Orchestration",
+    "secondary_category": "Testing / QA",
+    "capabilities": [
+      "Orchestration",
+      "Findings Synthesis & Dedup",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  },
+  {
+    "id": "AGT-112",
+    "name": "Release Gatekeeper Role",
+    "primary_category": "DevOps",
+    "secondary_category": "Security",
+    "capabilities": [
+      "DevOps",
+      "Release Gating & Governance",
+      "Audit Analysis",
+      "Verification & Gating"
+    ]
+  }
+]

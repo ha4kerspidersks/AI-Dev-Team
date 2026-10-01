@@ -1,0 +1,208 @@
+# ==============================================================================
+# AI-DEV-TEAM CANONICAL MANIFEST
+# Portable Specification for AI-Dev-Team Multi-Agent Ecosystem
+# ==============================================================================
+version: "2.0.0"
+name: "AI-Dev-Team"
+description: "Portable, reproducible AI development environment with agents, skills, MCP, orchestration, model routing, and automation."
+repository: "https://github.com/ha4kerspidersks/AI-Dev-Team"
+visibility: "public"
+
+metadata:
+  created: "2026-10-01"
+  license: "MIT"
+  maintainer: "Subhajit Kar"
+
+# ------------------------------------------------------------------------------
+# Dependencies
+# ------------------------------------------------------------------------------
+dependencies:
+  system:
+    os: ["darwin", "linux"]
+    architectures: ["arm64", "x86_64", "aarch64"]
+  homebrew:
+    - "git"
+    - "gh"
+    - "python@3.14"
+    - "node@22"
+    - "ripgrep"
+    - "jq"
+  python:
+    - "pyyaml>=6.0"
+    - "openpyxl>=3.1.0"
+    - "pydantic>=2.0.0"
+    - "requests>=2.28.0"
+    - "httpx>=0.25.0"
+    - "rich>=13.0.0"
+  node:
+    - "@modelcontextprotocol/sdk>=1.0.0"
+    - "typescript>=5.0.0"
+
+# ------------------------------------------------------------------------------
+# Upstream Repositories
+# ------------------------------------------------------------------------------
+repositories:
+  - name: "AgentTeam"
+    url: "https://github.com/RichardLemmon/AgentTeam"
+    branch: "main"
+    purpose: "Agent team orchestration and SQLite task database"
+  - name: "OpenHands"
+    url: "https://github.com/OpenHands/OpenHands"
+    branch: "main"
+    purpose: "Autonomous software development agent platform"
+  - name: "OpenSepia"
+    url: "https://github.com/CelaenoIndustry/OpenSepia"
+    branch: "main"
+    purpose: "Advanced agent evaluation and task planning"
+  - name: "Understand-Anything"
+    url: "https://github.com/Egonex-AI/Understand-Anything.git"
+    branch: "main"
+    purpose: "Codebase understanding, knowledge graph, and AST indexing"
+  - name: "addyosmani-agent-skills"
+    url: "https://github.com/addyosmani/agent-skills.git"
+    branch: "main"
+    purpose: "Engineering skills collection by Addy Osmani"
+  - name: "agentic-awesome-skills"
+    url: "https://github.com/sickn33/agentic-awesome-skills.git"
+    branch: "main"
+    purpose: "Comprehensive curated AI agent skills catalog"
+  - name: "antigravity-skills"
+    url: "https://github.com/rmyndharis/antigravity-skills.git"
+    branch: "main"
+    purpose: "Specialized Antigravity IDE agent skills"
+  - name: "autonomous-dev-team"
+    url: "https://github.com/zxkane/autonomous-dev-team"
+    branch: "main"
+    purpose: "Autonomous developer squad workflows and prompts"
+  - name: "awesome-llm-apps"
+    url: "https://github.com/Shubhamsaboo/awesome-llm-apps.git"
+    branch: "main"
+    purpose: "LLM application patterns, RAG pipelines, and agent demos"
+  - name: "context7"
+    url: "https://github.com/upstash/context7.git"
+    branch: "master"
+    purpose: "Official context7 documentation and MCP integration"
+  - name: "ecc"
+    url: "https://github.com/affaan-m/ECC.git"
+    branch: "main"
+    purpose: "Enterprise Claude Code skills, NanoClaw REPL, and tools"
+  - name: "graphify"
+    url: "https://github.com/Graphify-Labs/graphify.git"
+    branch: "v8"
+    purpose: "Code graph construction and semantic dependency analysis"
+  - name: "mattpocock-skills"
+    url: "https://github.com/mattpocock/skills.git"
+    branch: "main"
+    purpose: "Modern development workflows and TypeScript agent skills"
+  - name: "omniroute"
+    url: "https://github.com/diegosouzapw/OmniRoute.git"
+    branch: "release/v3.8.51"
+    purpose: "Multi-provider model gateway and dynamic routing engine"
+  - name: "ponytail"
+    url: "https://github.com/DietrichGebert/ponytail.git"
+    branch: "main"
+    purpose: "Deterministic agent audit, technical debt, and rules governor"
+  - name: "spec-kit"
+    url: "https://github.com/github/spec-kit.git"
+    branch: "main"
+    purpose: "GitHub specification kit and contract design CLI"
+  - name: "strix"
+    url: "https://github.com/usestrix/strix.git"
+    branch: "main"
+    purpose: "Autonomous application security audit and vulnerability scanner"
+  - name: "superpowers"
+    url: "https://github.com/obra/superpowers.git"
+    branch: "main"
+    purpose: "Core agent capabilities, systematic debugging, and planning"
+
+# ------------------------------------------------------------------------------
+# Core Components
+# ------------------------------------------------------------------------------
+inventory:
+  agents:
+    count: 29
+    primary_roles:
+      - "Master Orchestrator"
+      - "Architect"
+      - "Senior Fullstack"
+      - "Developer"
+      - "Fast Developer"
+      - "Tester / QA"
+      - "Security Reviewer"
+      - "Deep Reviewer"
+      - "DevOps / SRE"
+      - "Documentation"
+      - "Git Release Engineer"
+      - "Researcher"
+      - "Data Engineer"
+      - "GitHub Copilot Specialist"
+  roles:
+    count: 30
+  skills:
+    count: 1371
+    in_repo_count: 1192
+    antigravity_native_count: 179
+  mcp_servers:
+    count: 18
+    key_servers:
+      - "agent-team (RichardLemmon/AgentTeam SQLite Task DB)"
+      - "browser (Puppeteer Web Automation)"
+      - "context7 (Upstash Documentation Resolver)"
+      - "filesystem (Secure File Operations)"
+      - "git (Repository Version Control)"
+      - "github (GitHub Platform Integration)"
+      - "notebooks (Interactive Jupyter Workspace)"
+      - "visualization (Data Visualizer)"
+      - "qwen-bridge (Local Qwen Bridge Proxy)"
+  mcp_tools:
+    definition_count: 8866
+  orchestrators:
+    count: 1
+    name: "Multi-Agent Review & Orchestration Engine"
+  routers:
+    count: 3
+    names:
+      - "FreeLLMAPI Dynamic Router (http://127.0.0.1:31415)"
+      - "OmniRoute Gateway (Port 3000 / Proxy)"
+      - "Qwen Antigravity Bridge (http://127.0.0.1:8787)"
+  workflows:
+    count: 4
+    names:
+      - "TDD Red-Green-Refactor Cycle"
+      - "Multi-Agent Differential Code Review"
+      - "Pre-Live Full Security & Quality Audit"
+      - "Automated Git Release & Documentation Sync"
+
+# ------------------------------------------------------------------------------
+# Integrations
+# ------------------------------------------------------------------------------
+integrations:
+  freellmapi:
+    gateway_url: "http://127.0.0.1:31415"
+    agent_count: 19
+    wrappers:
+      - "flm"
+      - "flm-aider"
+      - "flm-atomcode"
+      - "flm-claude"
+      - "flm-cline"
+      - "flm-codex"
+      - "flm-crush"
+      - "flm-cursor"
+      - "flm-dsh"
+      - "flm-gemini"
+      - "flm-goose"
+      - "flm-hermes"
+      - "flm-kilo"
+      - "flm-mimo"
+      - "flm-openclaw"
+      - "flm-opencode"
+      - "flm-qwen"
+  antigravity:
+    ide: "Google Antigravity IDE"
+    config_root: "~/.gemini/config"
+    rules_engine: "Global Antigravity Rule Engine"
+  vscode:
+    status: "Configured via workspace recommendations and tasks"
+  ponytail:
+    status: "Integrated: audit, debt, gain, help, review, rules"
