@@ -1,51 +1,51 @@
 {
-  "timestamp": 1790861966.498165,
-  "date": "2026-10-01 19:09:26",
+  "timestamp": 1790866448.08493,
+  "date": "2026-10-01 20:24:08",
   "results": {
     "Anthropic SSE (auto)": {
       "status": "PASS",
-      "ttft_sec": 2.352,
-      "total_sec": 2.357,
+      "ttft_sec": 5.612,
+      "total_sec": 6.267,
       "chunks": 6,
       "response": "OK",
       "error": null
     },
     "OpenAI SSE (qwen/qwen3.8-27b - fast)": {
-      "status": "PASS",
-      "ttft_sec": 0.219,
-      "total_sec": 0.219,
-      "chunks": 4,
-      "response": "OK",
-      "error": null
+      "status": "FAIL",
+      "ttft_sec": null,
+      "total_sec": 25.002,
+      "chunks": 0,
+      "response": null,
+      "error": "timed out"
     },
     "OpenAI SSE (auto)": {
       "status": "PASS",
-      "ttft_sec": 3.336,
-      "total_sec": 3.336,
-      "chunks": 5,
+      "ttft_sec": 4.294,
+      "total_sec": 4.814,
+      "chunks": 4,
       "response": "OK",
       "error": null
     },
     "Claude Code CLI (e2e)": {
       "status": "PASS",
-      "ttft_sec": 3.402,
-      "total_sec": 3.402,
+      "ttft_sec": 49.112,
+      "total_sec": 49.112,
       "response": "OK",
       "error": null
     },
     "Codex CLI (e2e - auto)": {
       "status": "PASS",
-      "ttft_sec": 5.527,
-      "total_sec": 5.527,
+      "ttft_sec": 7.296,
+      "total_sec": 7.296,
       "response": "OK",
       "error": null
     },
     "Codex CLI (e2e - direct)": {
-      "status": "PASS",
-      "ttft_sec": 5.203,
-      "total_sec": 5.203,
-      "response": "OK",
-      "error": null
+      "status": "FAIL",
+      "ttft_sec": null,
+      "total_sec": 2.919,
+      "response": "",
+      "error": "2026-10-01T14:54:05.202201Z ERROR codex_models_manager::mana"
     }
   }
 }
