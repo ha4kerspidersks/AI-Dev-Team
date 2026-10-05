@@ -268,7 +268,7 @@ class TestAuditEcosystem(unittest.TestCase):
         """Verify end-to-end PreLiveFullAudit pipeline execution."""
         with tempfile.TemporaryDirectory() as tmpdir:
             with open(os.path.join(tmpdir, "app.py"), "w") as f:
-                f.write("import os\napi_token = 'ghp_samplefaketokenforunittesting1234567890'\nprint('running')\n")
+                f.write("import os\nauth_token = 'token_for_prelive_orchestration_test_123'\nprint('running')\n")
             with open(os.path.join(tmpdir, "requirements.txt"), "w") as f:
                 f.write("flask==2.0.1\nrequests==2.28.1\n")
 
