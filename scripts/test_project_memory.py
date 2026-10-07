@@ -12,9 +12,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
-SANDBOX_DIR = Path("/Users/subhajkar/Developer/AI-Dev-Team/test-projects/memory-test-sandbox")
-PORTFOLIO_DIR = Path("/Users/subhajkar/Developer/subhajitportfolio-2.0")
-ENGINE_SCRIPT = Path("/Users/subhajkar/Developer/AI-Dev-Team/scripts/project_memory_engine.py")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SANDBOX_DIR = REPO_ROOT / "test-projects" / "memory-test-sandbox"
+ENGINE_SCRIPT = REPO_ROOT / "scripts" / "project_memory_engine.py"
+
 
 passed = 0
 failed = 0
