@@ -11,6 +11,7 @@
   },
   "overrides": {
     "@modelcontextprotocol/sdk": "^1.31.0",
-    "basic-ftp": "^6.2.1"
+    "basic-ftp": "^6.2.1",
+    "puppeteer": "^25.12.0"
   }
 }
